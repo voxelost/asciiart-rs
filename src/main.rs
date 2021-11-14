@@ -6,7 +6,7 @@ use std::env;
 const GRAYSCALE_CHARS: &str =
     "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^'. ";
 
-const IMG_SCALE: u32 = 2;
+const IMG_SCALE: u32 = 1;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -29,7 +29,7 @@ fn str_from_image(img: Image) -> String {
     let step_x: u32 = 4 * IMG_SCALE;
     let step_y: u32 = 9 * IMG_SCALE;
 
-    let mut output_str: String = String::from("");
+    let mut output_str: String = String::new();
 
     for y in (0..size_y).step_by(step_y as usize) {
         for x in (0..size_x).step_by(step_x as usize) {
